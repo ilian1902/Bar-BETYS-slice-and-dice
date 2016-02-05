@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=500, initial-scale=1">-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>Cafe Bar Betys</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="styles/app.css" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-resource.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+</head>
+<body ng-app="coffeApp" ng-controller="HomeController" ng-cloak>
+<div id="site-wrap">
+    <header id="header">
+        <nav id="nav" class="effect">
+            <div class="nav-color">
+                <div class="nav-opacity">
+                    <a id="logo" href="#/home">
+                        <img src="img/Logo.png">
+                    </a>
+                    <ul class="nav">
+                        <li>
+                            <a href="#/home" title="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#/login">Login</a>
+                        </li>
+                        <li>
+                            <a href="#/menu">Menu</a>
+                        </li>
+                        <li>
+                            <a href="#/galery">Galery</a>
+                        </li>
+                        <li>
+                            <a href="#/reservation">Reservation</a>
+                        </li>
+                        <li>
+                            <a href="#/about">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="head-title">
+            <h1 class="title">
+                Kafe-bar BETY'S
+            </h1>
+            <p>
+                Welcome <br/>
+                ala bala ala bala <br/>
+                ala bala ala bala <br/>
+                ala bala ala bala <br/>
+            </p>
+            <button class="btn">text</button>
+        </div>
+    </header>
+    <div class="text-wrap">
+        <div id="nav-content">
+            <ul>
+                <li></li>
+            </ul>
+            <div class="search">
+                <input id="search" type="search">
+                <button class="btn-search">Search</button>
+            </div>
+        </div>
+        <div ng-view>
+
+        </div>
+        <footer id="footer">
+            <div class="footer-info">
+                <div class="footer-logo">
+
+                        <img src="img/Logo.png">
+                        <strong>© MyCuisine Theme, 2010</strong>
+                        Donec placerat sodales aliquet. Vivamus neque nulla, fermentum id ultrices at, vulputate et
+                        risus. Aenean non lectus ipsum. Curabitur sagittis urna vel elit euismod faucibus. Aliquam sed
+                        magna id dolor cursus ullamcorper ut commodo nunc. Mauris suscipit, dolor et tristique
+                        scelerisque, leo neque congue libero, mollis accumsan nulla
+
+                </div>
+                <div class="comments">
+
+                        Donec placerat sodales aliquet. Vivamus neque nulla, fermentum id ultrices at, vulputate et
+                        risus. Aenean non lectus ipsum. Curabitur sagittis urna vel elit euismod faucibus. Aliquam sed
+                        magna id dolor cursus ullamcorper ut commodo nunc. Mauris suscipit, dolor et tristique
+                        scelerisque, leo neque congue libero, mollis accumsan nulla
+
+                </div>
+            </div>
+            <!--<div class="footer-logo center-item">-->
+            <!--<img src="img/footer-logo.jpg"/>-->
+            <!--</div>-->
+            <ul class="footer-nav nav center-item">
+                <li class="current">
+                    <a href="#/home" title="home">Home</a>
+                </li>
+                <li class="current">
+                    <a href="#/login">Login</a>
+                </li>
+                <li>
+                    <a href="#/menu">Menu</a>
+                </li>
+                <li>
+                    <a href="#/galery">Galery</a>
+                </li>
+                <li>
+                    <a href="#/reservation">Reservation</a>
+                </li>
+                <li>
+                    <a href="#/about">About</a>
+                </li>
+            </ul>
+            <p class="copy center-item">
+                Designet by <strong>Telerik Academy</strong> - Powered by <strong>Ilian Bratanov</strong>
+            </p>
+        </footer>
+    </div>
+</div>
+
+<script src="scripts/app.js"></script>
+<script src="scripts/controller/homeControler.js"></script>
+</body>
+</html>
