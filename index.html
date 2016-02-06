@@ -17,6 +17,14 @@
 <body ng-app="coffeApp" ng-controller="HomeController" ng-cloak>
 <div id="site-wrap">
     <header id="header">
+        <div class="text-wrap">
+            <div class="crossfade">
+                <figure></figure>
+                <figure></figure>
+                <figure></figure>
+                <figure></figure>
+            </div>
+        </div>
         <nav id="nav" class="effect">
             <div class="nav-color">
                 <div class="nav-opacity">
@@ -31,7 +39,25 @@
                             <a href="#/login">Login</a>
                         </li>
                         <li>
-                            <a href="#/menu">Menu</a>
+                            <a href="#/menu">Menu
+                                <ul>
+                                    <li>
+                                        <a href="menu/alcohol">Alcohol Drinks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Alcohol free Drinks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Foods</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Hot drinks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Deserts</a>
+                                    </li>
+                                </ul>
+                            </a>
                         </li>
                         <li>
                             <a href="#/galery">Galery</a>
@@ -46,83 +72,90 @@
                 </div>
             </div>
         </nav>
-        <div id="head-title">
-            <h1 class="title">
-                Kafe-bar BETY'S
-            </h1>
-            <p>
-                Welcome <br/>
-                ala bala ala bala <br/>
-                ala bala ala bala <br/>
-                ala bala ala bala <br/>
-            </p>
-            <button class="btn">text</button>
-        </div>
-    </header>
-    <div class="text-wrap">
-        <div id="nav-content">
-            <ul>
-                <li></li>
-            </ul>
-            <div class="search">
-                <input id="search" type="search">
-                <button class="btn-search">Search</button>
+        <div class="text-wrap">
+            <div id="head-title">
+                <h1 class="title">
+                    Kafe-bar BETY'S
+                </h1>
+                <p>
+                    Welcome <br/>
+                    ala bala ala bala <br/>
+                    ala bala ala bala <br/>
+                    ala bala ala bala <br/>
+                </p>
+                <button class="btn">text</button>
             </div>
         </div>
-        <div ng-view>
-
+    </header>
+    <!--<div class="text-wrap">-->
+    <div id="nav-content">
+        <ul>
+            <li></li>
+        </ul>
+        <div class="search">
+            <input id="search" type="search">
+            <button class="btn-search">Search</button>
         </div>
-        <footer id="footer">
+    </div>
+    <div id="content">
+        <div class="text-wrap border-bottom-effect">
+            <div ng-view>
+
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="text-wrap">
             <div class="footer-info">
                 <div class="footer-logo">
 
-                        <img src="img/Logo.png">
-                        <strong>© MyCuisine Theme, 2010</strong>
-                        Donec placerat sodales aliquet. Vivamus neque nulla, fermentum id ultrices at, vulputate et
-                        risus. Aenean non lectus ipsum. Curabitur sagittis urna vel elit euismod faucibus. Aliquam sed
-                        magna id dolor cursus ullamcorper ut commodo nunc. Mauris suscipit, dolor et tristique
-                        scelerisque, leo neque congue libero, mollis accumsan nulla
+                    <img src="img/Logo.png">
+                    <strong>© MyCuisine Theme, 2010</strong>
+                    Donec placerat sodales aliquet. Vivamus neque nulla, fermentum id ultrices at, vulputate et
+                    risus. Aenean non lectus ipsum. Curabitur sagittis urna vel elit euismod faucibus. Aliquam sed
+                    magna id dolor cursus ullamcorper ut commodo nunc. Mauris suscipit, dolor et tristique
+                    scelerisque, leo neque congue libero, mollis accumsan nulla
 
                 </div>
                 <div class="comments">
 
-                        Donec placerat sodales aliquet. Vivamus neque nulla, fermentum id ultrices at, vulputate et
-                        risus. Aenean non lectus ipsum. Curabitur sagittis urna vel elit euismod faucibus. Aliquam sed
-                        magna id dolor cursus ullamcorper ut commodo nunc. Mauris suscipit, dolor et tristique
-                        scelerisque, leo neque congue libero, mollis accumsan nulla
+                    Donec placerat sodales aliquet. Vivamus neque nulla, fermentum id ultrices at, vulputate et
+                    risus. Aenean non lectus ipsum. Curabitur sagittis urna vel elit euismod faucibus. Aliquam sed
+                    magna id dolor cursus ullamcorper ut commodo nunc. Mauris suscipit, dolor et tristique
+                    scelerisque, leo neque congue libero, mollis accumsan nulla
 
                 </div>
             </div>
-            <!--<div class="footer-logo center-item">-->
-            <!--<img src="img/footer-logo.jpg"/>-->
-            <!--</div>-->
-            <ul class="footer-nav nav center-item">
-                <li class="current">
-                    <a href="#/home" title="home">Home</a>
-                </li>
-                <li class="current">
-                    <a href="#/login">Login</a>
-                </li>
-                <li>
-                    <a href="#/menu">Menu</a>
-                </li>
-                <li>
-                    <a href="#/galery">Galery</a>
-                </li>
-                <li>
-                    <a href="#/reservation">Reservation</a>
-                </li>
-                <li>
-                    <a href="#/about">About</a>
-                </li>
-            </ul>
-            <p class="copy center-item">
-                Designet by <strong>Telerik Academy</strong> - Powered by <strong>Ilian Bratanov</strong>
-            </p>
-        </footer>
-    </div>
+        </div>
+        <!--<div class="footer-logo center-item">-->
+        <!--<img src="img/footer-logo.jpg"/>-->
+        <!--</div>-->
+        <ul class="footer-nav nav center-item">
+            <li class="current">
+                <a href="#/home" title="home">Home</a>
+            </li>
+            <li class="current">
+                <a href="#/login">Login</a>
+            </li>
+            <li>
+                <a href="#/menu">Menu</a>
+            </li>
+            <li>
+                <a href="#/galery">Galery</a>
+            </li>
+            <li>
+                <a href="#/reservation">Reservation</a>
+            </li>
+            <li>
+                <a href="#/about">About</a>
+            </li>
+        </ul>
+        <p class="copy center-item">
+            Designet by <strong>Telerik Academy</strong> - Powered by <strong>Ilian Bratanov</strong>
+        </p>
+    </footer>
+    <!--</div>-->
 </div>
-
 <script src="scripts/app.js"></script>
 <script src="scripts/controller/homeControler.js"></script>
 </body>
