@@ -1,0 +1,45 @@
+.home{
+}
+
+.home .top-menu{
+    margin-top: 60px;
+    width: 30%;
+    float: left;
+}
+
+.home .location{
+    margin-top: 60px;
+    width: 30%;
+    float: left;
+}
+
+.home .blog-post{
+    margin-top: 60px;
+    margin-bottom: 80px;
+    width: 30%;
+    float: right;
+}
+.blog-post h2{
+    padding-bottom: 20px;
+}
+
+.blog-post div{
+    z-index: 1;
+    background: #ffffff
+}
+.blog-post .blog{
+    border-radius: 5px;
+    padding: 15px;
+    background: #ffffff;
+}
+.blog-post .image{
+    width: 66px;
+    height: 66px;
+    border: 1px solid #e5e2c6;
+}
+.blog-post .image img{
+    margin: 5px;
+    width: 55px;
+    height: 55px;
+    border: 1px solid #e5e2c6;
+}

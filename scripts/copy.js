@@ -18,8 +18,8 @@
             .when('/galery', {
                 templateUrl: 'templates/galery.html'
             })
-            .when('/reservation', {
-                templateUrl: 'templates/reservation.html'
+            .when('/blog', {
+                templateUrl: 'templates/blog.html'
             })
             .when('/about', {
                 templateUrl: 'templates/about.html'
