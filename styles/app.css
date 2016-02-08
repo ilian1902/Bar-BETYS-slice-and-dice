@@ -1,10 +1,11 @@
-html, body, ul, li, a, h1, h2, p, nav, footer, content span div{
+html, body, ul, li, a, h1, h2, h3, p, nav, footer, content span div, article{
     margin: 0;
     padding: 0;
 }
 
 img{
     max-width: 100%;
+    height: auto;
     border: 0;
 }
 
@@ -46,6 +47,7 @@ a{
     padding-right: 15.7%;
 }
 
+.top-product,
 .footer-info,
 .footer-logo,
 .comments,
@@ -59,6 +61,7 @@ a{
     zoom: 1;
 }
 
+.top-product:after,
 .footer-info:after,
 .footer-logo:after,
 .comments:after,
@@ -107,8 +110,8 @@ a{
     margin: 0;
     padding: 0;
     padding-bottom: 77px;
-    background: url("../img/header.jpg")no-repeat 0 0;
-    /*background-color: #452917;*/
+    /*background: url("../img/header.jpg")no-repeat 0 0;*/
+    background-color: #452917;
     background-size: auto;
 }
 
@@ -236,7 +239,8 @@ a{
     clear: right;
 }
 #head-title .title{
-    font-family: LeagueGothic, Georgia, sans-serif;
+    font-family: League Gothic, Arial, serif;
+    font-weight: normal;
     text-transform: uppercase;
     font-size: 4.1rem;
     color: #fff;
@@ -448,7 +452,7 @@ a{
 
 .crossfade > figure:nth-child(5) {
     animation-delay: 24s;
-    background-image: url("/img/betys1.jpg");
+    background-image: url("/img/betys3.jpg");
 }
 
 @keyframes

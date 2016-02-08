@@ -18,7 +18,8 @@
 .about-info h2{
     padding-bottom: 15px;
     font-size: 22px;
-    font-family: LeagueGothic, Georgia, sans-serif;
+    font-family: League Gothic, Arial, serif;
+    font-weight: normal;
     color: #cac6a1;
     text-shadow: 1px 1px 0 rgba(255, 255, 255, 1);
     text-transform: uppercase;
