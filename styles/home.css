@@ -46,32 +46,32 @@
 }
 
 /*Home page left */
-.home .top-menu{
+.home .product-menu{
     margin-top: 6.25%;
     width: 30%;
     float: left;
 }
 
-    .top-menu h3{
+    .product-menu h3{
         padding-top: 5px;
     }
 
-    .top-menu li{
+    .product-menu li{
         padding-bottom: 15px;
         display: inline-block;
     }
 
-    .top-menu li a .image{
+    .product-menu li a .image{
         float: left;
     }
 
-    .top-menu li article{
+    .product-menu li article{
         margin-left: 13px;
         float: left;
-        width: 40%;
+        width: 65%;
     }
 
-    .top-menu li article p{
+    .product-menu li article p{
         margin-top: 10px;
     }
 
@@ -79,6 +79,7 @@
 /*Home page center*/
 .home .location{
     margin-top: 6.25%;
+    margin-left: 5%;
     width: 30%;
     float: left;
 }
