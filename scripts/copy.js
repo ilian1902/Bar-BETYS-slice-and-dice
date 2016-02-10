@@ -3,14 +3,23 @@
  */
 (function(){
     'use strict';
-    function config($routeProvider) {
+
+    function config($routeProvider, $locationProvider) {
+
         var CONTROLLER_VIEW_MODEL = 'vm';
+
+        //$locationProvider = html5Mode(true);
+
         $routeProvider
-            .when('/home', {
-                templateUrl: 'templates/home.html'
+            .when('/', {
+                templateUrl: 'templates/home.html',
+                controller: 'HomeController',
+                controllerAs: CONTROLLER_VIEW_MODEL
             })
             .when('/login', {
-                templateUrl: 'templates/login.html'
+                templateUrl: 'templates/login.html',
+                controller: 'LoginController',
+                controllerAs: CONTROLLER_VIEW_MODEL
             })
             .when('/menu', {
                 templateUrl: 'templates/menu.html'
@@ -24,15 +33,14 @@
             .when('/about', {
                 templateUrl: 'templates/about.html'
             })
-            .when('/register',{
+            .when('/acount/register',{
                 templateUrl: 'templates/register.html',
                 controller: 'RegisterController',
                 controllerAs: CONTROLLER_VIEW_MODEL
             })
-            .otherwise({redirectTo: '/home'});
+            .otherwise({redirectTo: '/'});
     }
 
-    angular.module('coffeApp', ['coffeApp.controller']);
-    angular.module('coffeApp.controller', [])
-        .config(['$routeProvider', config]);
+    angular.module('coffeApp.controllers', []);
+    angular.module('coffeApp', ['ngRoute', 'coffeApp.controllers']).config(['$routeProvider','$locationProvider', config]);
 }());

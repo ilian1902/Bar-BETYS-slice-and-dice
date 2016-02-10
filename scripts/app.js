@@ -8,7 +8,7 @@
         .config(function($routeProvider) {
             var CONTROLER_VIEW_MODEL = 'vm';
             $routeProvider
-                .when('/home', {
+                .when('/', {
                     templateUrl: 'templates/home.html'
                 })
                 .when('/login', {
@@ -26,12 +26,12 @@
                 .when('/about', {
                     templateUrl: 'templates/about.html'
                 })
-                .when('/register',{
+                .when('/acount/register',{
                     templateUrl: 'templates/register.html',
                     controller: 'RegisterController',
                     controllerAs: CONTROLER_VIEW_MODEL
                 })
-                .otherwise({redirectTo: '/home'});
+                .otherwise({redirectTo: '/'});
         })
     angular.module('coffeApp.controller', []);
 }());

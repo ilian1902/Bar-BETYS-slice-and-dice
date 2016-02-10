@@ -2,24 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <!--<meta name="viewport" content="width=500, initial-scale=1">-->
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1">-->
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <title>Cafe Bar Betys</title>
-    <!-- Latest compiled and minified CSS -->
+    <link rel="shortcut icon" href="favicon.ico">
     <link href="styles/app.css" rel="stylesheet" type="text/css">
     <link href="styles/home.css" rel="stylesheet" type="text/css">
     <link href="styles/about.css" rel="stylesheet" type="text/css">
     <link href="styles/menu.css" rel="stylesheet" type="text/css">
     <link href="styles/gallery.css" rel="stylesheet" type="text/css">
 
+    <!--<base href="/">-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-resource.min.js">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-resource.js"></script>
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-resource.min.js">-->
+    <!--</script>-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>-->
 </head>
-<body ng-app="coffeApp" ng-controller="HomeController" ng-cloak>
+<body ng-app="coffeApp" ng-cloak ng-controller="MainController as vm">
 <div id="site-wrap">
     <header id="header">
         <div class="text-wrap">
@@ -41,7 +47,16 @@
                             <a href="#/home" title="home">Home</a>
                         </li>
                         <li>
-                            <a href="#/login">Login</a>
+                            <a href="#">Sing Up
+                                <ul ng-if="!vm.currentLogUser">
+                                    <li>
+                                        <a href="#/acount/register">Register</a>
+                                    </li>
+                                    <li>
+                                        <a href="#/login">login</a>
+                                    </li>
+                                </ul>
+                            </a>
                         </li>
                         <li>
                             <a href="#/menu">Menu
@@ -81,6 +96,7 @@
             <div id="head-title">
                 <h1 class="title">
                     bar BETY'S
+                    <!--{{vm.home}}-->
                 </h1>
                 <p>
                     Welcome <br/>
@@ -196,7 +212,20 @@
     </footer>
     <!--</div>-->
 </div>
-<script src="scripts/app.js"></script>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="http://www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+<script>Parse.initialize("5Xaa3ePLj1KMmFdWZg2SO2c4EvBbHnYP56mwXrz0", "JGUEUsh0Q8Bo3LnUp4EjeJnAzccskFLpNfOPpAB9");</script>
+
+
+<script src="scripts/copy.js"></script>
+<script src="scripts/controller/mainController.js"></script>
 <script src="scripts/controller/homeControler.js"></script>
+<script src="scripts/controller/loginController.js"></script>
+<script src="scripts/controller/registerController.js"></script>
+
+
+
+
 </body>
 </html>

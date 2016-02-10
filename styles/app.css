@@ -1,6 +1,17 @@
-html, body, ul, li, a, h1, h2, h3, p, nav, footer, content span div, article{
+html, body, ul, li, a, h1, h2, h3, p, nav, footer, content span div, article, label, form{
     margin: 0;
     padding: 0;
+}
+
+body, html{
+    font: 62.5% 'Georgia', 'Verdana', sans-serif;
+}
+
+label{
+    font-family: Georgia, Verdana, sans-serif;
+    font-size: 1.4rem;
+    color: #452917;
+    text-shadow: 1px 1px 1px #fff;
 }
 
 img{
@@ -9,12 +20,13 @@ img{
     border: 0;
 }
 
-body, html{
-    font: 62.5% 'Georgia', 'Verdana', sans-serif;
-}
-
 a{
     text-decoration: none;
+}
+
+.form{
+    padding: 10%;
+    font-size: 1.8rem;
 }
 
 .center-item{
@@ -258,7 +270,7 @@ a{
 
 .btn{
     box-shadow: 0 0 3px rgba(0, 0, 0, 1);
-    background-color: #7ba35c;
+    background: #7ba35c;
     color: #ffffff;
     border: 1px solid #375323;
     border-radius: 20px;
@@ -266,6 +278,15 @@ a{
     padding-right: 20px;
     height: 35px;
 }
+
+.btn:hover{
+    background: #688c4d;
+}
+
+.btn:disabled{
+    background: rgba(125, 165, 96, .5);
+}
+
 
 /*content ng view*/
 #content{

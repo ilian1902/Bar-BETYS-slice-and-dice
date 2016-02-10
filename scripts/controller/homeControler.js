@@ -7,9 +7,9 @@
     function HomeController(){
         var vm = this;
 
-        vm.hi = 'HI';
+        vm.home = 'hi';
     }
-
-    angular.module('coffeApp')
-        .controller('HomeController', [HomeController]);
+    angular.module('coffeApp.controllers').controller('HomeController', [HomeController]);
+    //angular.module('coffeApp')
+    //    .controller('HomeController', [HomeController]);
 }());
