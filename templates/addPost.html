@@ -1,0 +1,20 @@
+<form class="form" name="postForm">
+    <fieldset>
+        <legend>Add Post</legend>
+        <div>
+            <label for="inputTitle">Title</label>
+            <div>
+                <input id="inputTitle" ng-model="post.title" class="input" type="text" required="required" placeholder="Title">
+            </div>
+        </div>
+        <div>
+            <label for="inputPostText">Text</label>
+            <div>
+                <textarea id="inputPostText" ng-model="post.text" class="input" required="required" placeholder="Text"></textarea>
+            </div>
+        </div>
+        <div>
+            <button ng-click="vm.addPost(post, postForm)" ng-disabled="registerForm.$invalid" class="btn btn-addPost">Add Post</button>
+        </div>
+    </fieldset>
+</form>

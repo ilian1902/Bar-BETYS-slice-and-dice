@@ -8,7 +8,7 @@
 
         var CONTROLLER_VIEW_MODEL = 'vm';
 
-        //$locationProvider = html5Mode(true);
+        //$locationProvider.html5Mode(true);
 
         $routeProvider
             .when('/', {
@@ -38,9 +38,28 @@
                 controller: 'RegisterController',
                 controllerAs: CONTROLLER_VIEW_MODEL
             })
+            .when('/add/post',{
+                templateUrl: 'templates/addPost.html',
+                controller: 'PostController',
+                controllerAs: CONTROLLER_VIEW_MODEL
+            })
             .otherwise({redirectTo: '/'});
     }
+    function run($http, $cookies, auth){
+        //if (auth.isAuthenticated()) {
+        //    $http.defaults.headers.common.Authorization = 'Bearer ' + $cookies.get('authentication');
+        //    auth.getIdentity().then(function (identity) {
+        //        notifier.success('Welcome back!');
+        //    });
+        //}
+    };
 
-    angular.module('coffeApp.controllers', []);
-    angular.module('coffeApp', ['ngRoute', 'coffeApp.controllers']).config(['$routeProvider','$locationProvider', config]);
+    angular.module('coffeApp.services', []);
+    angular.module('coffeApp.controllers', ['coffeApp.services']);
+
+    angular.module('coffeApp', ['ngRoute','ngCookies', 'coffeApp.controllers'])
+        .config(['$routeProvider','$locationProvider', config])
+        .run(['$http', '$cookies', 'auth', run])
+        .value('Parse', Parse)
+        .constant('baseServiceUrl', 'https://api.parse.com/1/');
 }());

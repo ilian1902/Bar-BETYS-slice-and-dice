@@ -14,11 +14,12 @@
     <link href="styles/menu.css" rel="stylesheet" type="text/css">
     <link href="styles/gallery.css" rel="stylesheet" type="text/css">
 
-    <!--<base href="/">-->
+    <!--<base href="#/">-->
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-cookies.js"></script>
 
     <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>-->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-resource.min.js">-->
@@ -47,13 +48,22 @@
                             <a href="#/home" title="home">Home</a>
                         </li>
                         <li>
-                            <a href="#">Sing Up
-                                <ul ng-if="!vm.currentLogUser">
+                            <a href="#" ng-if="!vm.currentLogUser">Sing Up
+                                <ul>
                                     <li>
                                         <a href="#/acount/register">Register</a>
                                     </li>
                                     <li>
                                         <a href="#/login">login</a>
+                                    </li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" ng-if="vm.currentLogUser">{{vm.user}}
+                                <ul>
+                                    <li>
+                                        <a href="#/login">Log Out</a>
                                     </li>
                                 </ul>
                             </a>
@@ -84,6 +94,11 @@
                         </li>
                         <li>
                             <a href="#/blog">Blog</a>
+                            <ul ng-if="!vm.currentLogUser">
+                                <li>
+                                    <a href="#/add/post">Add Post</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#/about">About</a>
@@ -93,10 +108,10 @@
             </div>
         </nav>
         <div class="text-wrap">
-            <div id="head-title">
+            <div id="head-title" ng-controller="HomeController as vm">
                 <h1 class="title">
-                    bar BETY'S
-                    <!--{{vm.home}}-->
+                    <!--bar BETY'S-->
+                    {{vm.home}}
                 </h1>
                 <p>
                     Welcome <br/>
@@ -219,10 +234,12 @@
 
 
 <script src="scripts/copy.js"></script>
+<script src="scripts/service/authService.js"></script>
 <script src="scripts/controller/mainController.js"></script>
 <script src="scripts/controller/homeControler.js"></script>
 <script src="scripts/controller/loginController.js"></script>
 <script src="scripts/controller/registerController.js"></script>
+<script src="scripts/controller/postController.js"></script>
 
 
 

@@ -4,12 +4,21 @@
 (function () {
 
     'use strict';
-    function MainController(user) {
+    function MainController(Parse, auth) {
         var vm = this;
-        var currentUser = Parse.User.current();
-        if(currentUser){
-            vm.curentLogUser = currentUser;
-        }
+
+        var currentUser = Parse.User.current(); // proba za audentikaciq
+        var query = new Parse.Query('currentUser');
+
+        vm.currentLogUser = currentUser;
+        query.find(currentUser.name,{
+            success: console.log(currentUser)
+        });
+
+        //var currentUser = Parse.User.current();
+        //if(currentUser){
+        //    vm.curentLogUser = currentUser;
+        //}
 
     }
 
@@ -26,5 +35,5 @@
 
 
 
-    angular.module('coffeApp').controller('MainController', [ MainController]);
+    angular.module('coffeApp.controllers').controller('MainController', ['Parse','auth', MainController]);
 }());

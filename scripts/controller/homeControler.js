@@ -4,12 +4,12 @@
 (function(){
     'use strict';
 
-    function HomeController(){
+    function HomeController($location){
         var vm = this;
 
-        vm.home = 'hi';
+            vm.home = "bar BETY'S";
+            vm.isHidden = true;
     }
-    angular.module('coffeApp.controllers').controller('HomeController', [HomeController]);
-    //angular.module('coffeApp')
-    //    .controller('HomeController', [HomeController]);
+
+    angular.module('coffeApp.controllers').controller('HomeController', ['$location', HomeController]);
 }());

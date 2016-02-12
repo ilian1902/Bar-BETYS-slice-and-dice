@@ -9,7 +9,6 @@
 
         vm.register = function (user, registerForm) {
             if (registerForm.$valid) {
-
                 var data = {
                     name: $('#inputUserName').val(),
                     password: $('#inputPassword').val(),
