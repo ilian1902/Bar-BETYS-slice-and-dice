@@ -29,7 +29,7 @@
 </head>
 <body ng-app="coffeApp" ng-cloak ng-controller="MainController as vm">
 <div id="site-wrap">
-    <header id="header"  ng-model="collapsed">
+    <header id="header">
     <div>
         <div class="text-wrap">
             <div class="crossfade">
@@ -42,7 +42,7 @@
         <nav id="nav" class="effect">
             <div class="nav-color">
                 <div class="nav-opacity">
-                    <a id="logo" href="#/home">
+                    <a id="logo" href="#/home" ng-click="collapsed = collapsed">
                         <img src="img/Logo.png">
                     </a>
                     <ul class="nav">
@@ -50,7 +50,7 @@
                             <a href="#/home" title="home" ng-click="collapsed = collapsed">Home</a>
                         </li>
                         <li ng-if="vm.currentLogUser">
-                            <a href="#" >Sing up
+                            <a href="#" ng-click="collapsed =!collapsed" >Sing up
                                 <ul>
                                     <li>
                                         <a href="#/acount/register" ng-click="collapsed =!collapsed">Register</a>
@@ -63,7 +63,7 @@
                             </a>
                         </li>
                         <li ng-if="vm.curentLogUser">
-                            <a href="#">{{vm.curentLogUser.get('username')}}
+                            <a href="#" ng-click="collapsed =!collapsed">{{vm.curentLogUser.get('username')}}
                                 <ul>
                                     <li>
                                         <a ng-click="vm.logOut(currentUser)">Log Out</a>
@@ -75,28 +75,28 @@
                             <a href="#/menu" ng-click="collapsed =!collapsed">Menu
                                 <ul>
                                     <li>
-                                        <a href="menu/alcohol">Alcohol Drinks</a>
+                                        <a href="menu/alcohol" ng-click="collapsed =!collapsed">Alcohol Drinks</a>
                                     </li>
                                     <li>
-                                        <a href="#">Alcohol free Drinks</a>
+                                        <a href="#" ng-click="collapsed = collapsed">Alcohol free Drinks</a>
                                     </li>
                                     <li>
-                                        <a href="#">Foods</a>
+                                        <a href="#" ng-click="collapsed = collapsed">Foods</a>
                                     </li>
                                     <li>
-                                        <a href="#">Hot drinks</a>
+                                        <a href="#" ng-click="collapsed = collapsed">Hot drinks</a>
                                     </li>
                                     <li>
-                                        <a href="#">Deserts</a>
+                                        <a href="#" ng-click="collapsed = collapsed">Deserts</a>
                                     </li>
                                 </ul>
                             </a>
                         </li>
                         <li>
-                            <a href="#/galery">Galery</a>
+                            <a href="#/galery" ng-click="collapsed =!collapsed">Galery</a>
                         </li>
                         <li>
-                            <a href="#/blog">Blog</a>
+                            <a href="#/blog" ng-click="collapsed =!collapsed">Blog</a>
                             <ul ng-if="!vm.currentLogUser">
                                 <li>
                                     <a href="#/add/post">Add Post</a>
@@ -104,7 +104,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#/about">About</a>
+                            <a href="#/about" ng-click="collapsed =!collapsed">About</a>
                         </li>
                     </ul>
                 </div>
@@ -149,7 +149,7 @@
     </div>
     <footer id="footer">
         <div class="text-wrap">
-            <div class="footer-info" ng-if="vm.isTitle = true">
+            <div class="footer-info" ng-if="collapsed">
                 <div class="info-left">
                     <img src="img/Logo.png"></br>
                     <strong>© MyCuisine Theme, 2010</strong>
@@ -208,27 +208,27 @@
                 </div>
             </div>
         </div>
-        <div class="footer-logo center-item">
+        <div class="footer-logo center-item" ng-if="!collapsed">
         <img src="img/footer-logo.jpg"/>
         </div>
         <ul class="footer-nav nav center-item">
             <li class="current">
-                <a href="#/home" title="home">Home</a>
+                <a href="#/home" title="home" ng-click="collapsed = collapsed">Home</a>
             </li>
             <li class="current">
-                <a href="#/login">Login</a>
+                <a href="#/login" ng-click="collapsed =!collapsed">Login</a>
             </li>
             <li>
-                <a href="#/menu">Menu</a>
+                <a href="#/menu" ng-click="collapsed =!collapsed">Menu</a>
             </li>
             <li>
-                <a href="#/galery">Galery</a>
+                <a href="#/galery" ng-click="collapsed =!collapsed">Galery</a>
             </li>
             <li>
-                <a href="#/blog">Blog</a>
+                <a href="#/blog" ng-click="collapsed =!collapsed">Blog</a>
             </li>
             <li>
-                <a href="#/about">About</a>
+                <a href="#/about" ng-click="collapsed =!collapsed">About</a>
             </li>
         </ul>
         <p class="copy center-item">
