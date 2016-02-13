@@ -2,6 +2,8 @@
  * Created by Ilian on 10/02/2016.
  */
 (function(){
+    'use strict';
+
 
      var authService = function authService($http, $q, $cookies, Parse, baseServiceUrl) {
 

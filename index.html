@@ -13,6 +13,7 @@
     <link href="styles/about.css" rel="stylesheet" type="text/css">
     <link href="styles/menu.css" rel="stylesheet" type="text/css">
     <link href="styles/gallery.css" rel="stylesheet" type="text/css">
+    <link href="styles/blog.css" rel="stylesheet" type="text/css">
 
     <!--<base href="#/">-->
 
@@ -94,7 +95,7 @@
                         </li>
                         <li>
                             <a href="#/blog">Blog</a>
-                            <ul ng-if="!vm.currentLogUser">
+                            <ul ng-if="vm.currentLogUser">
                                 <li>
                                     <a href="#/add/post">Add Post</a>
                                 </li>
@@ -147,60 +148,66 @@
         <div class="text-wrap">
             <div class="footer-info" ng-class="ngHide">
                 <div class="info-left">
-
-                    <img src="img/Logo.png">
+                    <img src="img/Logo.png"></br>
                     <strong>© MyCuisine Theme, 2010</strong>
+                    <p>
                     Donec placerat sodales aliquet. Vivamus neque nulla, fermentum id ultrices at, vulputate et
                     risus. Aenean non lectus ipsum. Curabitur sagittis urna vel elit euismod faucibus. Aliquam sed
                     magna id dolor cursus ullamcorper ut commodo nunc. Mauris suscipit, dolor et tristique
                     scelerisque, leo neque congue libero, mollis accumsan nulla
-
+                    </p>
                 </div>
                 <div class="info-center">
-                    <h1>oiuhlkjh</h1>
+                    <h3>RECENT COMMENTS</h3>
                     <ul>
                         <li>
-                            <a>link 1</a>
+                            <a href="#">Rhoncus quis varius sed velit nibh moles</a>
                         </li>
                         <li>
-                            <a>link 2</a>
+                            <a href="#">Mauris quis nunc eu nunc molestie</a>
                         </li>
                         <li>
-                            <a>link 3</a>
+                            <a href="#">Egestas et sit amet odio morbi quis nunc</a>
                         </li>
                         <li>
-                            <a>link 4</a>
+                            <a href="#">Lacinia velit in nibh sodales sed quis nunc</a>
                         </li>
                         <li>
-                            <a>link 5</a>
+                            <a href="#">Pharetra sem feugiat nibh sodales sed</a>
+                        </li>
+                        <li>
+                            <a href="#">Vivamus ut cursus augue nibh sodales sed </a>
                         </li>
                     </ul>
                 </div>
                 <div class="info-right">
-                    <h1>kjguyg</h1>
+                    <h3>Recent posts</h3>
                     <ul>
                         <li>
-                            <a>link link link link link</a>
+                            <a href="#">Rhoncus quis varius sed velit nibh moles</a>
                         </li>
                         <li>
-                            <a>link 2</a>
+                            <a href="#">Mauris quis nunc eu nunc molestie</a>
                         </li>
                         <li>
-                            <a>link 3</a>
+                            <a href="#">Egestas et sit amet odio morbi quis nunc</a>
                         </li>
                         <li>
-                            <a>link 4</a>
+                            <a href="#">Lacinia velit in nibh sodales sed quis nunc</a>
                         </li>
                         <li>
-                            <a>link 5</a>
+                            <a href="#">Pharetra sem feugiat nibh sodales sed</a>
+                        </li>
+                        <li>
+                            <a href="#">Vivamus ut cursus augue nibh sodales sed </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <!--<div class="footer-logo center-item">-->
-        <!--<img src="img/footer-logo.jpg"/>-->
-        <!--</div>-->
+        <div class="footer-logo center-item">
+        <img src="img/footer-logo.jpg"/>
+        </div>
         <ul class="footer-nav nav center-item">
             <li class="current">
                 <a href="#/home" title="home">Home</a>
@@ -215,7 +222,7 @@
                 <a href="#/galery">Galery</a>
             </li>
             <li>
-                <a href="#/reservation">Reservation</a>
+                <a href="#/blog">Blog</a>
             </li>
             <li>
                 <a href="#/about">About</a>
@@ -235,6 +242,8 @@
 
 <script src="scripts/copy.js"></script>
 <script src="scripts/service/authService.js"></script>
+<script src="scripts/service/dataService.js"></script>
+<script src="scripts/controller/blogController.js"></script>
 <script src="scripts/controller/mainController.js"></script>
 <script src="scripts/controller/homeControler.js"></script>
 <script src="scripts/controller/loginController.js"></script>

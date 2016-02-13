@@ -28,7 +28,9 @@
                 templateUrl: 'templates/galery.html'
             })
             .when('/blog', {
-                templateUrl: 'templates/blog.html'
+                templateUrl: 'templates/blog.html',
+                controller: 'BlogController',
+                controllerAs: CONTROLLER_VIEW_MODEL
             })
             .when('/about', {
                 templateUrl: 'templates/about.html'

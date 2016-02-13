@@ -131,7 +131,7 @@
     }
 
     .blog-post div:nth-last-child(1){
-        height: 233px;
+        /*height: 233px;*/
         border-radius: 5px;
     }
 
