@@ -8,7 +8,7 @@
         var vm =this;
 
         vm.currentPost = function(query){
-            data.get()
+
         }
     }
 

@@ -77,10 +77,4 @@
     angular.module('coffeApp.services')
         .factory('auth', ['$http', '$q', '$cookies', 'Parse', 'baseServiceUrl', authService]);
 
-    //app.controller( 'MainCtrl', function( $scope, AuthService ) {
-    //    $scope.$watch( AuthService.isLoggedIn, function ( isLoggedIn ) {
-    //        $scope.isLoggedIn = isLoggedIn;
-    //        $scope.currentUser = AuthService.currentUser();
-    //    });
-    //});
 }());

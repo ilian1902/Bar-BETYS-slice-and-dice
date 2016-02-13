@@ -128,7 +128,7 @@ h3{
 }
 
 /*Header*/
-#header-home{
+#header{
     margin: 0;
     padding: 0;
     padding-bottom: 77px;
@@ -137,7 +137,7 @@ h3{
     background-size: auto;
 }
 
-#header{
+#header .header-not-home{
     margin: 0;
     padding: 0;
     /*padding-bottom: 77px;*/

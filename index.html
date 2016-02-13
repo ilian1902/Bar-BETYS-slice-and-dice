@@ -29,7 +29,8 @@
 </head>
 <body ng-app="coffeApp" ng-cloak ng-controller="MainController as vm">
 <div id="site-wrap">
-    <header id="header">
+    <header id="header"  ng-model="collapsed">
+    <div>
         <div class="text-wrap">
             <div class="crossfade">
                 <figure></figure>
@@ -46,31 +47,32 @@
                     </a>
                     <ul class="nav">
                         <li>
-                            <a href="#/home" title="home">Home</a>
+                            <a href="#/home" title="home" ng-click="collapsed = collapsed">Home</a>
                         </li>
-                        <li>
-                            <a href="#" ng-if="!vm.currentLogUser">Sing Up
+                        <li ng-if="vm.currentLogUser">
+                            <a href="#" >Sing up
                                 <ul>
                                     <li>
-                                        <a href="#/acount/register">Register</a>
+                                        <a href="#/acount/register" ng-click="collapsed =!collapsed">Register</a>
                                     </li>
                                     <li>
-                                        <a href="#/login">login</a>
+                                        <a href="#/login" ng-click="collapsed =!collapsed">login</a>
+                                    </li>
+                                </ul>
+
+                            </a>
+                        </li>
+                        <li ng-if="vm.curentLogUser">
+                            <a href="#">{{vm.curentLogUser.get('username')}}
+                                <ul>
+                                    <li>
+                                        <a ng-click="vm.logOut(currentUser)">Log Out</a>
                                     </li>
                                 </ul>
                             </a>
                         </li>
                         <li>
-                            <a href="#" ng-if="vm.currentLogUser">{{vm.user}}
-                                <ul>
-                                    <li>
-                                        <a href="#/login">Log Out</a>
-                                    </li>
-                                </ul>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#/menu">Menu
+                            <a href="#/menu" ng-click="collapsed =!collapsed">Menu
                                 <ul>
                                     <li>
                                         <a href="menu/alcohol">Alcohol Drinks</a>
@@ -95,7 +97,7 @@
                         </li>
                         <li>
                             <a href="#/blog">Blog</a>
-                            <ul ng-if="vm.currentLogUser">
+                            <ul ng-if="!vm.currentLogUser">
                                 <li>
                                     <a href="#/add/post">Add Post</a>
                                 </li>
@@ -123,6 +125,7 @@
                 <button class="btn">Reservation here</button>
             </div>
         </div>
+    </div>
     </header>
     <div class="text-wrap">
         <div id="nav-content">
@@ -146,7 +149,7 @@
     </div>
     <footer id="footer">
         <div class="text-wrap">
-            <div class="footer-info" ng-class="ngHide">
+            <div class="footer-info" ng-if="vm.isTitle = true">
                 <div class="info-left">
                     <img src="img/Logo.png"></br>
                     <strong>© MyCuisine Theme, 2010</strong>
@@ -232,26 +235,22 @@
             Designet by <strong>Telerik Academy</strong> - Powered by <strong>Ilian Bratanov</strong>
         </p>
     </footer>
-    <!--</div>-->
 </div>
 
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="http://www.parsecdn.com/js/parse-1.6.14.min.js"></script>
 <script>Parse.initialize("5Xaa3ePLj1KMmFdWZg2SO2c4EvBbHnYP56mwXrz0", "JGUEUsh0Q8Bo3LnUp4EjeJnAzccskFLpNfOPpAB9");</script>
 
-
 <script src="scripts/copy.js"></script>
 <script src="scripts/service/authService.js"></script>
 <script src="scripts/service/dataService.js"></script>
 <script src="scripts/controller/blogController.js"></script>
 <script src="scripts/controller/mainController.js"></script>
+<script src="scripts/controller/logOutController.js"></script>
 <script src="scripts/controller/homeControler.js"></script>
 <script src="scripts/controller/loginController.js"></script>
 <script src="scripts/controller/registerController.js"></script>
 <script src="scripts/controller/postController.js"></script>
-
-
-
 
 </body>
 </html>

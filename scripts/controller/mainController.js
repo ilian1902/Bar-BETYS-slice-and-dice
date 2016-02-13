@@ -4,36 +4,50 @@
 (function () {
 
     'use strict';
-    function MainController(Parse, auth) {
+    function MainController(Parse, auth, $location) {
         var vm = this;
 
-        var currentUser = Parse.User.current(); // proba za audentikaciq
-        var query = new Parse.Query('currentUser');
+        var currentUser = Parse.User.current();
+        if(currentUser){
+            vm.curentLogUser = currentUser;
+            console.log(currentUser.get('username'));
+        }
 
-        vm.currentLogUser = currentUser;
-        query.find(currentUser.name,{
-            success: console.log(currentUser)
-        });
+        var title = {
+            home: "bar bety's",
+            location: "store location",
+            menu: "Dinner menu",
+            post: "Post title goes here"
+        };
 
-        //var currentUser = Parse.User.current();
-        //if(currentUser){
-        //    vm.curentLogUser = currentUser;
+        vm.isTitle = true;
+        vm.titleLocation = function(currentLocation){
+            if(currentLocation == $location.path('/')){
+                return vm.title = title.home
+            }
+            if(currentLocation != $location.path('/')){
+                vm.title = title.location;
+                vm.isTitle = false;
+            }
+        }
+
+
+        //$scope.clickEvent = function(event) {
+        //    if($(event.target).hasClass('icon-closed')) {
+        //        $(event.target).removeClass('icon-closed')
+        //        $(event.target).addClass('icon-opened')
+        //    } else {
+        //        $(event.target).removeClass('icon-opened')
+        //        $(event.target).addClass('icon-closed')
+        //    }
+        //}
+
+
+        //vm.logOut = function(currentUser){
+        //    Parse.User.logOut();
         //}
 
     }
 
-    //Parse.User.logIn(username, password, {
-    //    success: function(user) {
-    //        var currentUser = Parse.User.current();
-    //        currentUser.fetch().then(function(fetchedUser) {
-    //            var name = fetchedUser.getUsername();
-    //            $('.alertmsg').html('<div id="alert"><p>You are' + name + '</div>');
-    //        });
-    //    }
-    //});
-
-
-
-
-    angular.module('coffeApp.controllers').controller('MainController', ['Parse','auth', MainController]);
+    angular.module('coffeApp.controllers').controller('MainController', ['Parse','auth','$location', MainController]);
 }());

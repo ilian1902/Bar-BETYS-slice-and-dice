@@ -5,7 +5,7 @@
 
     'use strict';
 
-    function LoginController($location, Parse){
+    function LoginController($location, Parse, $route){
         var vm = this;
 
         vm.login = function(user, loginForm){
@@ -18,9 +18,7 @@
 
 
                 Parse.User.logIn(data.name, data.password, {
-                    success: function(user){
-                        $location.path('/')
-                    }
+                    success: $location.path('/')
                 });
 
 
@@ -29,5 +27,5 @@
         }
     }
 
-    angular.module('coffeApp.controllers').controller('LoginController', ['$location', 'Parse', LoginController]);
+    angular.module('coffeApp.controllers').controller('LoginController', ['$location', 'Parse','$route', LoginController]);
 }());

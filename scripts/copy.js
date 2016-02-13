@@ -47,13 +47,12 @@
             })
             .otherwise({redirectTo: '/'});
     }
-    function run($http, $cookies, auth){
-        //if (auth.isAuthenticated()) {
-        //    $http.defaults.headers.common.Authorization = 'Bearer ' + $cookies.get('authentication');
-        //    auth.getIdentity().then(function (identity) {
-        //        notifier.success('Welcome back!');
-        //    });
-        //}
+
+
+    function run($http, $cookies, auth, $rootScope, $templateCache){
+        $rootScope.$on('$viewContentLoaded', function() {
+            $templateCache.removeAll();
+        })
     };
 
     angular.module('coffeApp.services', []);
@@ -61,7 +60,7 @@
 
     angular.module('coffeApp', ['ngRoute','ngCookies', 'coffeApp.controllers'])
         .config(['$routeProvider','$locationProvider', config])
-        .run(['$http', '$cookies', 'auth', run])
+        .run(['$http', '$cookies', 'auth','$rootScope','$templateCache', run])
         .value('Parse', Parse)
         .constant('baseServiceUrl', 'https://api.parse.com/1/');
 }());
